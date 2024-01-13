@@ -1,5 +1,14 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
+import 'jquery-ui-dist/jquery-ui.min.css';
+// import 'jquery-ui-dist/jquery-ui.min.js';
+import 'bootstrap/dist/css/bootstrap.css'
+import "./assets/vendors/fancybox/dist/jquery.fancybox.min.css";
+import "./assets/vendors/fontawesome/css/all.min.css";
+import "./assets/vendors/elementskit-icon-pack/assets/css/ekiticons.css";
+import "./assets/vendors/slick/slick.css";
+import "./assets/vendors/slick/slick-theme.css";
+import "./assets/style.css";
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -11,6 +20,84 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <header id="masthead" class="site-header">
+        <div class="top-header">
+          <div class="container">
+            <div class="top-header-inner">
+              <div class="header-contact text-left">
+                <a href="tel:+91 989 869 2098">
+                  <i aria-hidden="true" class="icon icon-phone-call2"></i>
+                  <div class="header-contact-details d-none d-sm-block">
+                    <span class="contact-label">For Further Inquires :</span>
+                    <h5 class="header-contact-no">+91 989 869 2098 </h5>
+                  </div>
+                </a>
+              </div>
+              <div class="site-logo text-center">
+                <h1 class="site-title">
+                  <a href="<?= base_url() ?>">
+                    <img src="/public/assets/images/site-logo.png" alt="Logo"/>
+                  </a>
+                </h1>
+              </div>
+              <div class="header-icon text-right">
+                <div class="header-search-icon d-inline-block">
+                  <a href="#">
+                    <i aria-hidden="true" class="fas fa-search"></i>
+                  </a>
+                </div>
+                <div class="offcanvas-menu d-inline-block">
+                  <a href="#">
+                    <i aria-hidden="true" class="icon icon-burger-menu"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="bottom-header">
+          <div class="container">
+            <div class="bottom-header-inner d-flex justify-content-between align-items-center">
+              <div class="header-social social-icon">
+                <ul>
+                  <li>
+                    <a href="https://www.facebook.com/profile.php?id=61550262686320&mibextid=b06tZ0" target="_blank">
+                      <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://www.instagram.com/sport_tourin/" target="_blank">
+                      <i class="fab fa-instagram" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="navigation-container d-none d-lg-block">
+                <nav id="navigation" class="navigation">
+                  <ul>
+                    <li>
+                      <a href="<?= base_url() ?>">Home</a>
+                    </li>
+                    <li>
+                      <a href="<?= base_url() ?>about-us">about us</a>
+                    </li>
+                    <li>
+                      <a href="<?= base_url() ?>events">Events</a>
+                    </li>
+                    <li>
+                      <a href="<?= base_url() ?>contact-us">contact us</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="header-btn">
+                <a href="<?= base_url() ?>packages" class="round-btn">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mobile-menu-container"></div>
+      </header>
       <body className={inter.className}>{children}</body>
     </html>
   )
